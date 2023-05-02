@@ -3,6 +3,9 @@ class ResistanceNodes:
         self.name = name
         self.stats = {stat: 0 for stat in ['health', 'equipment', 'morale', 'supplies', 'training']}
         self.set_stats(**stats)
+        stats_values = self.get_non_null_stats()
+        if stats_values[0] == None:
+            self.__del__()
 
     def set_stats(self, **stats):
         for stat, value in stats.items():
@@ -11,3 +14,12 @@ class ResistanceNodes:
 
     def get_stats(self):
         return self.stats
+    
+    def get_non_null_stats(self):
+        non_null_stats = []
+        for stat, value in self.stats.items():
+            if value != 0:
+                non_null_stats.append(stat)
+        if len(non_null_stats) == 0:
+            non_null_stats.append(None)
+        return non_null_stats
