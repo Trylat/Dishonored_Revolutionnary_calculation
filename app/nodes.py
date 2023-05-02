@@ -1,7 +1,6 @@
 class ResistanceNodes:
     def __init__(self, name, **stats):
         self.name = name
-        print(f"Node {self.name} created!!")
         self.stats = {stat: 0 for stat in ['health', 'equipment', 'morale', 'supplies', 'training']}
         self.set_stats(**stats)
 

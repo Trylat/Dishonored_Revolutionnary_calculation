@@ -28,10 +28,11 @@ class ResistanceFlow:
             print("This node is already in the flow")
 
     def display_nodes(self):
+        print(self.name)
         for node in self.nodes:
             stat_name = node.get_non_null_stats()[0]
             print(node.name, stat_name, node.stats[stat_name])
-
+    
     def get_stats_sum(self):
         #total_sum = 0  # initial total_sum
         for i, node in enumerate(self.nodes):

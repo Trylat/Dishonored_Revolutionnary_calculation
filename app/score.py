@@ -12,14 +12,10 @@ class RevolutionScore:
         print(f"Initial Score = {current_score}")
 
         for i in range(len(flow.nodes) - 1):  # Loop through all nodes in the flow
-            print("==========================")
             current_node = flow.nodes[i]
             next_node = flow.nodes[i + 1]
             current_node_score = current_node.stats[current_node.get_non_null_stats()[0]]  # Get the score for the current node
             next_node_score = next_node.stats[next_node.get_non_null_stats()[0]]  # Get the score for the next node
-            print(f"Current Score Flow = {current_score}")
-            print(f"Current Node Score = {current_node_score}")
-            print(f"Next Node Score = {next_node_score}")
 
             if next_node_score < current_node_score:  # If the score for the next node is lower than the current node
                 diff = int((current_node_score - next_node_score)/2)
