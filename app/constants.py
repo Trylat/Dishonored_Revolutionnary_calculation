@@ -1,9 +1,9 @@
 nodes_list = [    
-    {"name": "Node 1", "health": 80, "equipment": 0, "morale": 0, "supplies": 0, "training": 0},    
-    {"name": "Node 2", "health": 0, "equipment": 40, "morale": 0, "supplies": 0, "training": 0},    
-    {"name": "Node 3", "health": 0, "equipment": 0, "morale": 70, "supplies": 0, "training": 0},    
-    {"name": "Node 4", "health": 0, "equipment": 0, "morale": 0, "supplies": 80, "training": 0},    
-    {"name": "Node 5", "health": 0, "equipment": 0, "morale": 0, "supplies": 0, "training": 90},
+    {"name": "Node 1", "health": 10, "equipment": 0, "morale": 0, "supplies": 0, "training": 0},    
+    {"name": "Node 2", "health": 0, "equipment": 20, "morale": 0, "supplies": 0, "training": 0},    
+    {"name": "Node 3", "health": 0, "equipment": 0, "morale": 30, "supplies": 0, "training": 0},    
+    {"name": "Node 4", "health": 0, "equipment": 0, "morale": 0, "supplies": 40, "training": 0},    
+    {"name": "Node 5", "health": 0, "equipment": 0, "morale": 0, "supplies": 0, "training": 50},
     {"name": "Node 6", "health": 0, "equipment": 0, "morale": 0, "supplies": 0, "training": 90}
     ]
 

@@ -1,4 +1,5 @@
 from app.nodes import ResistanceNodes
+from app.score import RevolutionScore
 from app.constants import *
 from app.utils import *
 
@@ -23,24 +24,46 @@ class testFlow:
         for flow in self.flows:
             print(flow.name)
             for node in flow.nodes:
-                print(node.name, node.get_non_null_stats()[0])
+                print(f"    {node.name, node.get_non_null_stats()[0]}")
 
+        # Apply modifier to node based on node order and node stats
         for flow in self.flows:
-            print(flow.get_stats_sum())
-        write_to_json(self.flows , "Test_Save.json")
+            print("===============================")
+            print(flow.name)
+            print("---------Initial:")
+            flow.display_nodes()
+            print("---------Apply modifier:")
+            flow.get_stats_sum()
+            print("---------Updated:")
+            flow.display_nodes()
 
-        data = read_from_json("Test_Save.json")
-        for flow in data:
-            print(f"{flow['name']}")
-            for node in flow["nodes"]:
-                print(f"    {node}")
+        #write_to_json(self.flows , "Test_Save.json")
 
-class testFlux:
+        #data = read_from_json("Test_Save.json")
+        #for flow in data:
+            #print(f"{flow['name']}")
+            #for node in flow["nodes"]:
+                #print(f"    {node}")
+
+class testScore:
     def __init__(self):
         self.nodes = multinode()
         self.flows = multiflow(self.nodes)
+        self.score = RevolutionScore()
+        self.test_sequence()
+    
+    def test_sequence(self):
+        print("++++++++++SCORE CALCULATION+++++++++++")
+        for flow in self.flows:
+            print("=====================================")
+            flow.get_stats_sum()
+            print("=====================================")
+            self.score.calculate_flow_score(flow)
+            print(f"Score = {self.score.score}")
+            
 
 
 if __name__ == '__main__':
-    NodeTest = testNode()
-    FlowTest = testFlow()
+    #NodeTest = testNode()
+    #FlowTest = testFlow()
+    ScoreTest = testScore()
