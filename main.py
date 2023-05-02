@@ -17,7 +17,9 @@ class testFlow:
     def __init__(self):
         self.nodes = multinode()
         self.flows = multiflow(self.nodes)
+        self.test_sequence()
 
+    def test_sequence(self):
         for flow in self.flows:
             print(flow.name)
             for node in flow.nodes:
@@ -25,6 +27,12 @@ class testFlow:
 
         for flow in self.flows:
             print(flow.get_stats_sum())
+
+class testFlux:
+    def __init__(self):
+        self.nodes = multinode()
+        self.flows = multiflow(self.nodes)
+
 
 if __name__ == '__main__':
     NodeTest = testNode()

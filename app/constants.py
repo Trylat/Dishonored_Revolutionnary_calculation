@@ -10,7 +10,8 @@ nodes_list = [
 flows_list = [
     {'name': 'flow1', 'nodes': ["Node 1", "Node 2", "Node 3", "Node 4", "Node 5"]},
     {'name': 'flow2', 'nodes': ["Node 2", "Node 1", "Node 5", "Node 4", "Node 3"]},
-    {'name': 'flow3', 'nodes': ["Node 5", "Node 4", "Node 2", "Node 3", "Node 1"]}
+    {'name': 'flow3', 'nodes': ["Node 5", "Node 4", "Node 2", "Node 3", "Node 1"]},
+    {'name': 'flow4', 'nodes': ["Node 7", "Node 4", "Node 2", "Node 3", "Node 1"]}
 ]
 
 negative_combinations = [
