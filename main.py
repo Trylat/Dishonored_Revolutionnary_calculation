@@ -27,6 +27,13 @@ class testFlow:
 
         for flow in self.flows:
             print(flow.get_stats_sum())
+        write_to_json(self.flows , "Test_Save.json")
+
+        data = read_from_json("Test_Save.json")
+        for flow in data:
+            print(f"{flow['name']}")
+            for node in flow["nodes"]:
+                print(f"    {node}")
 
 class testFlux:
     def __init__(self):

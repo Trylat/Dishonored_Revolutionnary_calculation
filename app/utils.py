@@ -1,7 +1,7 @@
 from app.constants import *
 from app.nodes import ResistanceNodes
 from app.flow import ResistanceFlow
-
+import json
 
 def multinode():
     nodes = []
@@ -34,3 +34,23 @@ def multiflow(nodes_list):
                 print("Error not the same number of node than what was suppose to be in flow")
 
         return flows
+
+
+def write_to_json(flows:list, file_path: str):
+    flow_state_list = []
+    for flow in flows:
+        flow_state = {
+            "name"  : flow.name,
+            "nodes" : [node.stats for node in flow.nodes],
+        }
+        flow_state_list.append(flow_state)
+    with open(file_path, 'w', encoding='utf-8') as f:
+        json.dump(flow_state_list, f, indent=4, sort_keys=True, ensure_ascii=False)
+
+
+def read_from_json(file_path: str):
+    with open(file_path, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+    if not data:
+        print(f"File {file_path} is empty.")
+    return data
