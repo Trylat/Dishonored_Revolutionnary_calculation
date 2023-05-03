@@ -32,7 +32,8 @@ class Interface:
         print("1. Add New Node")
         print("2. Remove Node")
         print("3. Modify Node")
-        print("4. Back to Main Menu")
+        print("4. View Node")
+        print("5. Back to Main Menu")
 
     def print_flow_menu(self):
         print("Flow Management Menu")
@@ -64,21 +65,32 @@ class Interface:
                 self.rev_data.add_node(new_node)
                 print("Node added successfully!")
             elif choice == "2":
-               self.clear_screen()
-               print("Select a node to Delete: ")
-               self.print_node_list(self.rev_data.nodes)
-               index = self.get_valid_node_index(self.rev_data.nodes)
-               node_name = self.rev_data.nodes[index]
-               print(f"node_NAME {node_name}")
-               self.rev_data.remove_node_from_flows(node_name)
+                self.clear_screen()
+                print("Select a node to Delete: ")
+                self.print_node_list(self.rev_data.nodes, True)
+                index = self.get_valid_node_index(self.rev_data.nodes, True)
+                if index < len(self.rev_data.nodes):
+                    node_name = self.rev_data.nodes[index]
+                    print(f"node_NAME {node_name}")
+                    self.rev_data.remove_node_from_flows(node_name)
+                elif index == len(self.rev_data.nodes):
+                    pass
             elif choice == "3":
                 self.clear_screen()
                 print("Select a node to Modify: ")
-                self.print_node_list(self.rev_data.nodes)
-                index = self.get_valid_node_index(self.rev_data.nodes)
-                stat = self.get_stat_value()
-                self.rev_data.modify_node(index, **stat)
+                self.print_node_list(self.rev_data.nodes, True)
+                index = self.get_valid_node_index(self.rev_data.nodes, True)
+                if index < len(self.rev_data.nodes):
+                    stat = self.get_stat_value()
+                    self.rev_data.modify_node(index, **stat)
+                elif index == len(self.rev_data.nodes):
+                    pass
             elif choice == "4":
+                self.clear_screen()
+                print("This is the list of Nodes in the map and the stats values of each ones of them:")
+                self.print_node_list(self.rev_data.nodes, True)
+                self.get_valid_node_index(self.rev_data.nodes, True)
+            elif choice == "5":
                 break
             else:
                 print("Invalid choice, please try again.")

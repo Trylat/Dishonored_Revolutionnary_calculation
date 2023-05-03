@@ -1,18 +1,42 @@
 nodes_list = [    
-    {"name": "Node 1", "health": 10, "equipment": 0, "morale": 0, "supplies": 0, "training": 0},    
-    {"name": "Node 2", "health": 0, "equipment": 50, "morale": 0, "supplies": 0, "training": 0},    
-    {"name": "Node 3", "health": 0, "equipment": 0, "morale": 20, "supplies": 0, "training": 0},    
-    {"name": "Node 4", "health": 0, "equipment": 0, "morale": 0, "supplies": 40, "training": 0},    
-    {"name": "Node 5", "health": 0, "equipment": 0, "morale": 0, "supplies": 0, "training": 50},
-    {"name": "Node 6", "health": 0, "equipment": 0, "morale": 0, "supplies": 0, "training": 30}
+    {"name": "Clinique de Janne",
+     "health": 3, 
+     "equipment": 0,
+     "morale": 0, 
+     "supplies": 0, 
+     "training": 0
+     },    
+    {"name": "La Taverne de la Raclure noire",
+      "health": 0,
+      "equipment": 3,
+      "morale": 0,
+      "supplies": 0,
+      "training": 0
+      },    
+    {"name": "Porte du principal quartier",
+      "health": 0, 
+      "equipment": 0, 
+      "morale": 0, 
+      "supplies": 3, 
+      "training": 0
+      },    
+    {"name": "L'imprimerie Clandestine",
+      "health": 0, 
+      "equipment": 0, 
+      "morale": 3, 
+      "supplies": 0, 
+      "training": 0
+      },    
+    {"name": "Terrain d'entrainement", 
+     "health": 0, 
+     "equipment": 0, 
+     "morale": 0, 
+     "supplies": 0, 
+     "training": 3
+     },
     ]
 
-flows_list = [
-    {'name': 'flow1', 'nodes': ["Node 1", "Node 3", "Node 6", "Node 4", "Node 2"]},
-    {'name': 'flow2', 'nodes': ["Node 1", "Node 4", "Node 3", "Node 2", "Node 6"]},
-    {'name': 'flow3', 'nodes': ["Node 5", "Node 4", "Node 2", "Node 3", "Node 1"]},
-    {'name': 'flow4', 'nodes': ["Node 6", "Node 4", "Node 2", "Node 3", "Node 1"]}
-]
+flows_list = []
 
 negative_combinations = [
                         ("health", "supplies"), 
