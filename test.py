@@ -1,6 +1,7 @@
 from app.nodes import ResistanceNodes
 from app.score import RevolutionScore
 from app.data_manager import RevolutionData
+from gui.gui import Interface
 from app.constants import *
 from app.utils import *
 
@@ -107,11 +108,11 @@ class testSave:
         # Modify flow
         rev_data_2.flows[1].insert_node(2,rev_data_2.nodes[-1])
         rev_data_2.end_turn("save")
-        # Load modify data
+        # Load modify data2
         print("extract new data")
 
         print("EXTRACTED DATA========================")
-        file_name = f"save_{rev_data_2.turn_number+1}.json"
+        file_name = f"save_{rev_data_2.turn_number}.json"
         rev_data_3 = RevolutionData.from_file(file_name)
         print(f"Score: {rev_data_3.current_score.score}")
         print(f"Turn Number: {rev_data_3.turn_number}")
@@ -123,11 +124,34 @@ class testSave:
             stat_name = node.get_non_null_stats()[0]
             print(node.name, stat_name, node.stats[stat_name])
 
+class testGui:
+    def __init__(self):
+        # Create RevolutionData instance
+        self.rev_data = RevolutionData()
+        # Creade World data
+        self.nodes = multinode()
+        self.flows = multiflow(self.nodes)
+        self.score = RevolutionScore()
+
+        # Add Revolution score
+        self.rev_data.current_score = self.score
+        # Add nodes
+        for node in self.nodes:
+            self.rev_data.add_node(node)
+        # Add flows
+        for flow in self.flows:
+            self.rev_data.add_flow(flow)
+
+        # Create GUI
+        self.gui = Interface(self.rev_data)
+        self.gui.run()
 
 
+        
 
 if __name__ == '__main__':
     #NodeTest = testNode()
     #FlowTest = testFlow()
     #ScoreTest = testScore()
-    SaveTest = testSave()
+    #SaveTest = testSave()
+    DisplayTest = testGui()

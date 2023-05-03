@@ -1,0 +1,288 @@
+{
+    "current_score": 1018,
+    "flows": [
+        {
+            "name": "flow1",
+            "nodes": [
+                {
+                    "name": "Node 1",
+                    "stats": {
+                        "equipment": 0,
+                        "health": 10,
+                        "morale": 0,
+                        "supplies": 0,
+                        "training": 0
+                    }
+                },
+                {
+                    "name": "Node 3",
+                    "stats": {
+                        "equipment": 0,
+                        "health": 0,
+                        "morale": 20,
+                        "supplies": 0,
+                        "training": 0
+                    }
+                },
+                {
+                    "name": "Node 6",
+                    "stats": {
+                        "equipment": 0,
+                        "health": 0,
+                        "morale": 0,
+                        "supplies": 0,
+                        "training": 30
+                    }
+                },
+                {
+                    "name": "Node 4",
+                    "stats": {
+                        "equipment": 0,
+                        "health": 0,
+                        "morale": 0,
+                        "supplies": 40,
+                        "training": 0
+                    }
+                },
+                {
+                    "name": "Node 2",
+                    "stats": {
+                        "equipment": 50,
+                        "health": 0,
+                        "morale": 0,
+                        "supplies": 0,
+                        "training": 0
+                    }
+                }
+            ]
+        },
+        {
+            "name": "flow2",
+            "nodes": [
+                {
+                    "name": "Node 1",
+                    "stats": {
+                        "equipment": 0,
+                        "health": 10,
+                        "morale": 0,
+                        "supplies": 0,
+                        "training": 0
+                    }
+                },
+                {
+                    "name": "Node 4",
+                    "stats": {
+                        "equipment": 0,
+                        "health": 0,
+                        "morale": 0,
+                        "supplies": 40,
+                        "training": 0
+                    }
+                },
+                {
+                    "name": "Node 3",
+                    "stats": {
+                        "equipment": 0,
+                        "health": 0,
+                        "morale": 20,
+                        "supplies": 0,
+                        "training": 0
+                    }
+                },
+                {
+                    "name": "Node 2",
+                    "stats": {
+                        "equipment": 50,
+                        "health": 0,
+                        "morale": 0,
+                        "supplies": 0,
+                        "training": 0
+                    }
+                },
+                {
+                    "name": "Node 6",
+                    "stats": {
+                        "equipment": 0,
+                        "health": 0,
+                        "morale": 0,
+                        "supplies": 0,
+                        "training": 30
+                    }
+                }
+            ]
+        },
+        {
+            "name": "flow3",
+            "nodes": [
+                {
+                    "name": "Node 5",
+                    "stats": {
+                        "equipment": 0,
+                        "health": 0,
+                        "morale": 0,
+                        "supplies": 0,
+                        "training": 50
+                    }
+                },
+                {
+                    "name": "Node 4",
+                    "stats": {
+                        "equipment": 0,
+                        "health": 0,
+                        "morale": 0,
+                        "supplies": 40,
+                        "training": 0
+                    }
+                },
+                {
+                    "name": "Node 2",
+                    "stats": {
+                        "equipment": 50,
+                        "health": 0,
+                        "morale": 0,
+                        "supplies": 0,
+                        "training": 0
+                    }
+                },
+                {
+                    "name": "Node 3",
+                    "stats": {
+                        "equipment": 0,
+                        "health": 0,
+                        "morale": 20,
+                        "supplies": 0,
+                        "training": 0
+                    }
+                },
+                {
+                    "name": "Node 1",
+                    "stats": {
+                        "equipment": 0,
+                        "health": 10,
+                        "morale": 0,
+                        "supplies": 0,
+                        "training": 0
+                    }
+                }
+            ]
+        },
+        {
+            "name": "flow4",
+            "nodes": [
+                {
+                    "name": "Node 6",
+                    "stats": {
+                        "equipment": 0,
+                        "health": 0,
+                        "morale": 0,
+                        "supplies": 0,
+                        "training": 30
+                    }
+                },
+                {
+                    "name": "Node 4",
+                    "stats": {
+                        "equipment": 0,
+                        "health": 0,
+                        "morale": 0,
+                        "supplies": 40,
+                        "training": 0
+                    }
+                },
+                {
+                    "name": "Node 2",
+                    "stats": {
+                        "equipment": 50,
+                        "health": 0,
+                        "morale": 0,
+                        "supplies": 0,
+                        "training": 0
+                    }
+                },
+                {
+                    "name": "Node 3",
+                    "stats": {
+                        "equipment": 0,
+                        "health": 0,
+                        "morale": 20,
+                        "supplies": 0,
+                        "training": 0
+                    }
+                },
+                {
+                    "name": "Node 1",
+                    "stats": {
+                        "equipment": 0,
+                        "health": 10,
+                        "morale": 0,
+                        "supplies": 0,
+                        "training": 0
+                    }
+                }
+            ]
+        }
+    ],
+    "nodes": [
+        {
+            "name": "Node 1",
+            "stats": {
+                "equipment": 0,
+                "health": 10,
+                "morale": 0,
+                "supplies": 0,
+                "training": 0
+            }
+        },
+        {
+            "name": "Node 2",
+            "stats": {
+                "equipment": 50,
+                "health": 0,
+                "morale": 0,
+                "supplies": 0,
+                "training": 0
+            }
+        },
+        {
+            "name": "Node 3",
+            "stats": {
+                "equipment": 0,
+                "health": 0,
+                "morale": 20,
+                "supplies": 0,
+                "training": 0
+            }
+        },
+        {
+            "name": "Node 4",
+            "stats": {
+                "equipment": 0,
+                "health": 0,
+                "morale": 0,
+                "supplies": 40,
+                "training": 0
+            }
+        },
+        {
+            "name": "Node 5",
+            "stats": {
+                "equipment": 0,
+                "health": 0,
+                "morale": 0,
+                "supplies": 0,
+                "training": 50
+            }
+        },
+        {
+            "name": "Node 6",
+            "stats": {
+                "equipment": 0,
+                "health": 0,
+                "morale": 0,
+                "supplies": 0,
+                "training": 30
+            }
+        }
+    ],
+    "turn_number": 3
+}

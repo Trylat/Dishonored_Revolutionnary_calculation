@@ -13,8 +13,41 @@ class RevolutionData:
     def add_flow(self, flow):
         self.flows.append(flow)
 
+    def remove_flow(self, flow_name):
+        for flow in self.flows:
+            if flow.name == flow_name:
+                self.flows.remove(flow)
+                del flow
+                print(f"Flow {flow_name} has been removed.")
+                return
+        print(f"Flow {flow_name} not found.")
+
     def add_node(self, node):
         self.nodes.append(node)
+
+    def modify_node(self, node_index, **stat):
+        node_to_alter = self.nodes[node_index]
+        node_to_alter.set_stats(**stat)
+        self.refresh_flows()
+    
+    def refresh_flows(self):
+        for flow in self.flows:
+            nodes_list = flow.nodes
+            node_names = []
+            for node in nodes_list:
+                node_names.append(node.name)
+                flow.remove_node(node)
+            for node in self.nodes:
+                if node.name in node_names:
+                    flow.add_node(node)
+
+    def remove_node_from_flows(self, node_name):
+        for flow in self.flows:
+            nodes_to_remove = [n for n in flow.nodes if n.name == node_name]
+            for node in nodes_to_remove:
+                flow.remove_node(node)
+        self.nodes.remove(node_name)
+            
 
     def save_data(self, file_name):
         data = {

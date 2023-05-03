@@ -53,19 +53,25 @@ class ResistanceFlow:
                 # Check if this is a negative combination of stats
                 if (prev_stat_name, node_stat_name) in negative_combinations:
                     print(f"{prev_stat_name} followed by {node_stat_name} is a negative combination")
-                    print(f"Remouve {int(prev_node.stats[prev_stat_name]/2)} to {temp_stats[node_stat_name]}")
+                    print(f"Remouve {abs(int(prev_node.stats[prev_stat_name]/2))} to {temp_stats[node_stat_name]}")
                     # Subtract half of the previous stat value from the current stat value
-                    temp_stats[node_stat_name] -= int(prev_node.stats[prev_stat_name]/2)
+                    temp_stats[node_stat_name] -= abs(int(prev_node.stats[prev_stat_name]/2))
                     
                 # Check if this is a positive combination of stats
                 elif (prev_stat_name, node_stat_name) in positive_combinations:
                     print(f"{prev_stat_name} followed by {node_stat_name} is a positive combination")
-                    print(f"Add {int(prev_node.stats[prev_stat_name]/2)} to {temp_stats[node_stat_name]}")
+                    print(f"Add {abs(int(prev_node.stats[prev_stat_name]/2))} to {temp_stats[node_stat_name]}")
                     # Add half of the previous stat value to the current stat value
-                    temp_stats[node_stat_name] += int(prev_node.stats[prev_stat_name]/2)
+                    temp_stats[node_stat_name] += abs(int(prev_node.stats[prev_stat_name]/2))
 
             # Set the new node value
-            node.stats[node_stat_name] = temp_stats[node_stat_name]
+            node.stats["health"] = temp_stats["health"]
+            node.stats["equipment"] = temp_stats["equipment"]
+            node.stats["morale"] = temp_stats["morale"]
+            node.stats["supplies"] = temp_stats["supplies"]
+            node.stats["training"] = temp_stats["training"]
+
+            print(f"New Value = {node.stats[node_stat_name]}")
             #print(node.name, node_stat_name, node.stats[node_stat_name])
         
     
